@@ -1,0 +1,12 @@
+@import '../../App.css';
+
+.heartIcon{
+    width: 50px;
+    fill: none;
+    stroke-width: 7px;
+    stroke: var(--color-main);
+}
+
+.heartIcon:hover{
+    fill:var(--color-main);
+}
