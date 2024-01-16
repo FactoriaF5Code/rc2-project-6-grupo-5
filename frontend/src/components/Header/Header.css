@@ -1,14 +1,4 @@
-:root {
-    --main-font-family: 'Azeret Mono', monospace;
-    --secondary-font-family: 'Inter', sans-serif;
-    --color-main: #003B95;
-    --color-darkBlue: #03275F;
-    --color-lightBlue: #1367E7;
-    --color-gray: #D9D9D9;
-    --color-dark-gray: #9F9D9D;
-    --color-modal: #8ABABC;
-    --color-message: #A9C69D;
-}
+@import '../../App.css';
 
 header {
     background-color: var(--color-main);
@@ -17,7 +7,7 @@ header {
     justify-content: center;
 }
 
-nav{
+nav {
     display: flex;
     justify-content: space-between;
     align-items: center;

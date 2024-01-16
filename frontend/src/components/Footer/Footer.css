@@ -1,21 +1,53 @@
 section {
+  padding-top: 8px;
+  min-height: 150px;
+  position: relative;
+
   background-color: var(--color-main);
 }
+h2 {
+  font-family: var(--main-font-family);
+  font-size: 16px;
+}
+h3 {
+  font-family: var(--secondary-font-family);
+  font-size: 10px;
+}
 
-.h1.h2 {
+h3,
+h2 {
+  margin-bottom: 15px;
   display: flex;
-  justify-content: baseline;
+  justify-content: center;
   color: white;
 }
-nav {
+form {
+  margin-top: 15px;
   display: flex;
   justify-content: center;
 }
 input {
+  padding-left: 8px;
   background-color: var(--color-gray);
 }
 button {
-  background-color: var(--color-main);
+  margin-left: 30px;
+  padding: 8px 15px;
+  background-color: var(--color-light-blue);
   font-family: var(--main-font-family);
+  color: white;
+  font-size: 10px;
+}
+.footerlinks {
+  width: 100%;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  justify-content: space-evenly;
+  background-color: var(--color-light-blue);
+}
+.footerlinks a {
   color: white;
 }
