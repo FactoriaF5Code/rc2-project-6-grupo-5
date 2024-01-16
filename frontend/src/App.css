@@ -12,8 +12,9 @@
     --secondary-font-family: 'Inter', sans-serif;
     --color-main: #003B95;
     --color-secondary: #03275F;
+    --color-light-blue: #1367E7;
     --color-gray: #D9D9D9;
-    --color-dark-gray: #9F9D9D;
+    --color-dark-gray: #797878;
     --color-modal: #8ABABC;
     --color-message: #A9C69D;
 }

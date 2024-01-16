@@ -1,0 +1,66 @@
+@import '../../App.css';
+
+main{
+    margin: auto;
+    font-family: var(--secondary-font-family);
+    width: 1200px;
+}
+
+.galleryTitle{
+    margin-top: 115px;
+    color: var(--color-main);
+    font-family: var(--main-font-family);
+}
+
+.hotelList{
+    margin-top: 30px;
+    margin-bottom: 115px;
+}
+
+.hotelCard{
+    background-color: var(--color-gray);
+    display: flex;
+    padding: 15px;
+    margin-bottom: 20px;
+}
+
+.hotelInfo{
+    margin-left: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 16px 0 0 0;
+}
+
+.hotelNamePrice{
+    font-size: 23px;
+    font-weight: 800;
+    color: var(--color-main);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.hotelPrice{
+    color:var(--color-green);
+}
+
+.reservationInfo{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.hotelReservationButton {
+    background-color: var(--color-dark-gray);
+    padding: 18px 15px;
+    font-size: 16px;
+    color:white;
+    font-weight: 600;
+    width: 160px;
+}
+
+.hotelReservationButton:hover{
+    background-color: var(--color-light-blue);
+}
+
+
