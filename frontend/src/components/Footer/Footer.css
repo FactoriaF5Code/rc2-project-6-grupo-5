@@ -1,0 +1,21 @@
+section {
+  background-color: var(--color-main);
+}
+
+.h1.h2 {
+  display: flex;
+  justify-content: baseline;
+  color: white;
+}
+nav {
+  display: flex;
+  justify-content: center;
+}
+input {
+  background-color: var(--color-gray);
+}
+button {
+  background-color: var(--color-main);
+  font-family: var(--main-font-family);
+  color: white;
+}
