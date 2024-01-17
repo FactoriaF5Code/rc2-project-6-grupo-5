@@ -1,7 +1,16 @@
 import "./HotelCard.css";
+import { useState } from "react";
 import { HeartIcon } from "../Svg/HeartIcon";
+import { ModalReservationDates } from "../Modal/ModalReservationDates";
 
 export const HotelCard = (hotel) => {
+
+  const [modalIsOpen, setModalIsOpen] = useState(false);
+
+  const openModal = () => {
+    setModalIsOpen(true);
+  };
+
   return (
     <>
       <li className="hotelCard">
@@ -16,7 +25,10 @@ export const HotelCard = (hotel) => {
           </div>
           <div className="reservationInfo">
             <div className="icon"><HeartIcon /></div>
-            <button className="hotelReservationButton">¡Reserva Ahora!</button>
+            <button className="hotelReservationButton"  onClick={openModal}>
+              ¡Reserva Ahora!
+            </button>
+            {modalIsOpen && <ModalReservationDates closeModal={() => setModalIsOpen(false)} />}
           </div>
         </div>
       </li>

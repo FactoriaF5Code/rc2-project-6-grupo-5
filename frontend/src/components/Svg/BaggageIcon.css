@@ -1,0 +1,6 @@
+.iconBaggage{
+    width: 50px;
+    fill: none;
+    stroke-width: 7px;
+    stroke: var(--color-main);
+}

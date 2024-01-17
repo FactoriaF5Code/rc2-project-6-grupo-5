@@ -1,53 +1,76 @@
-section {
-  padding-top: 8px;
+@import '../../App.css';
+
+.footer {
+  padding-top: 50px;
   min-height: 150px;
-  position: relative;
-
-  background-color: var(--color-main);
+  background-color: var(--color-secondary);
 }
-h2 {
+
+.footerTitle {
   font-family: var(--main-font-family);
-  font-size: 16px;
-}
-h3 {
-  font-family: var(--secondary-font-family);
-  font-size: 10px;
+  font-size: 24px;
+  font-weight: 400;
 }
 
-h3,
-h2 {
+.footerText {
+  font-family: var(--secondary-font-family);
+  font-size: 18px;
+  color: white;
+  text-align: center;
+  font-weight: 200;
+}
+
+.footerTitle,
+.footerText {
   margin-bottom: 15px;
   display: flex;
   justify-content: center;
   color: white;
 }
-form {
-  margin-top: 15px;
+
+.footerForm {
+  margin: 20px 0 50px 0;
   display: flex;
   justify-content: center;
 }
-input {
-  padding-left: 8px;
+
+.footerEmailInput {
+  padding-left: 12px;
   background-color: var(--color-gray);
+  border-radius: 4px;
+  width: 400px;
+  height: 50px;
+  font-size: 15px;
 }
-button {
+
+.footerSubscribeButton {
   margin-left: 30px;
   padding: 8px 15px;
   background-color: var(--color-light-blue);
   font-family: var(--main-font-family);
   color: white;
-  font-size: 10px;
+  font-size: 15px;
+  border-radius: 4px;
+  cursor: pointer;
 }
-.footerlinks {
+
+.footerLinks {
   width: 100%;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  position: absolute;
-  bottom: 0;
+  padding: 10px 0;
   display: flex;
   justify-content: space-evenly;
   background-color: var(--color-light-blue);
 }
-.footerlinks a {
+
+.footerLinks a {
   color: white;
+  font-family: var(--secondary-font-family);
+  text-decoration: underline;
+  font-size: 15px;
+  font-weight: 300;
+}
+
+.footerLinks a:hover{
+  color:var(--color-secondary);
+  font-weight: 500;
 }
