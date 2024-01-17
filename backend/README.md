@@ -19,6 +19,7 @@ Use the maven wrapper to run the server:
 
 ```
 ./mvnw spring-boot:run
+
 ```
 
 On windows, run: 
