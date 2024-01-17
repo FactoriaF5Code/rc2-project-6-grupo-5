@@ -19,7 +19,7 @@ export const Footer = () => {
       </form>
       <div className="footerlinks">
         <a href="">Tu cuenta</a>
-        <a href="">Gestiona tus reservas onlin</a>
+        <a href="">Gestiona tus reservas online</a>
         <a href="">Atención al cliente</a>
         <a href="">Conviertete en afiliado</a>
         <a href="">Trooking.com for Business</a>
