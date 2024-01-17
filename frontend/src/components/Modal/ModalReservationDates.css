@@ -3,15 +3,17 @@
 .modalContainer {
     width: 1200px;
     height: fit-content;
-    background-color: var(--color-modal);
-    opacity: 90%;
+    background-color: #1368e7e3;
     padding-bottom: 72px;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    margin: auto;
+    left: 50%;
+    top: 45%;
+    transform: translate(-50%, -50%);
     border-radius: 4px;
+    position: absolute;
 }
 
 .modalCloseButton{
@@ -21,6 +23,7 @@
     align-self: flex-end;
     text-decoration: underline;
     cursor: pointer;
+    color: white;
 }
 
 .modalTitle {
@@ -28,6 +31,7 @@
     text-align: center;
     font-size: 36px;
     margin-top: 72px;
+    color: white;
 }
 
 .modalForm {
@@ -42,6 +46,8 @@
     font-family: var(--secondary-font-family);
     font-size: 18px;
     margin-bottom: 12px;
+    color: white;
+    font-weight: 300;
 }
 
 #fechaEntrada,
@@ -54,7 +60,7 @@
 
 .modalReservationButton{
     font-family: var(--secondary-font-family);
-    background-color: var(--color-dark-gray);
+    background-color: var(--color-main);
     color:white;
     font-size: 16px;
     padding: 15px 20px;
@@ -63,5 +69,7 @@
 }
 
 .modalReservationButton:hover{
-    background-color: var(--color-main);
+    background-color: #d69e05;
+    color: black;
+    font-weight: 500;
 }
