@@ -1,6 +1,6 @@
-import "./BaggageIcon.css";
+import "./Icons.css";
 
-export const BaggageIconn = () => {
+export const BaggageIcon = () => {
   return (
     <>
     <div className="iconBaggage">

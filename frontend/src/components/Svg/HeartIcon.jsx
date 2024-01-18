@@ -1,4 +1,4 @@
-import "./HeartIcon.css";
+import "./Icons.css";
 
 export const HeartIcon = () => {
   return (

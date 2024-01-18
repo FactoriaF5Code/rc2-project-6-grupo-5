@@ -1,17 +1,19 @@
 import "./App.css";
-import { Header } from "./components/Header/Header";
-import { Footer } from "./components/Footer/Footer";
-import { GalleryHotels } from "./components/GalleryHotels/GalleryHotels";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Home } from "./components/Home/Home";
+import { MyBookings } from "./components/MyBookings/MyBookings";
+
 
 function App() {
 
   return (
     <>
-      <Header />
-
-      <GalleryHotels />
-
-      <Footer />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/mis-reservas" element={<MyBookings />} />
+        </Routes>
+      </BrowserRouter>
     </>
   );
 }

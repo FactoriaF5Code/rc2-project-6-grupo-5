@@ -1,37 +1,38 @@
 import "./HotelCard.css";
-import React, { useState } from "react";
+import { useState } from "react";
 import { HeartIcon } from "../Svg/HeartIcon";
 import { ModalReservationDates } from "../Modal/ModalReservationDates";
-import { Button, IconButton, Snackbar } from "@material-ui/core";
+//import { Button, IconButton, Snackbar } from "@material-ui/core";
 import CloseIcon from "@material-ui/icons/Close";
 import Alert from "@material-ui/lab/Alert";
+import PropTypes from "prop-types";
 
-export const HotelCard = (hotel) => {
+
+export const HotelCard = ({ hotel, openModal }) => {
   const [modalIsOpen, setModalIsOpen] = useState(false);
 
   const [snackOpen, setSnackOpen] = useState(false);
-  const [fechaEntrada, setFechaEntrada] = useState();
-  const [fechaSalida, setFechaSalida] = useState();
-  const openModal = () => {
-    setModalIsOpen(true);
+
+  const handleReservationClick = () => {
+    openModal(hotel.id);
   };
+  
   const handleClose = (event, reason) => {
     if (reason === "clickaway") {
       return;
     }
-
     setSnackOpen(false);
   };
 
   return (
     <>
       <li className="hotelCard">
-        <img src={hotel.photo} alt="Imagen hotel" className="hotelImage" />
+        <img src={hotel.photoUrl} alt={hotel.name} className="hotelImage" />
         <div className="hotelInfo">
           <div className="hotelDetails">
             <div className="hotelNamePrice">
               <h3 className="hotelName">{hotel.name}</h3>
-              <p className="hotelPrice">{hotel.price} €</p>
+              <p className="hotelPrice">{hotel.pricePerNight} €</p>
             </div>
             <p className="hotelDescription">{hotel.description}</p>
           </div>
@@ -39,21 +40,23 @@ export const HotelCard = (hotel) => {
             <div className="icon">
               <HeartIcon />
             </div>
-            <button className="hotelReservationButton" onClick={openModal}>
+            <button className="hotelReservationButton" onClick={handleReservationClick}>
               ¡Reserva Ahora!
             </button>
-            {modalIsOpen && (
+            {modalIsOpen && <ModalReservationDates closeModal={() => setModalIsOpen(false)} hotelId={hotel.id} />}
+
+            {/* {modalIsOpen && (
               <ModalReservationDates
                 closeModal={() => {
                   setSnackOpen(true);
                   setModalIsOpen(false);
                 }}
               />
-            )}
+            )} */}
           </div>
         </div>
       </li>
-      <Snackbar
+      {/* <Snackbar
         anchorOrigin={{
           vertical: "bottom",
           horizontal: "left",
@@ -82,7 +85,18 @@ export const HotelCard = (hotel) => {
         <Alert onClose={handleClose} severity="success">
           Enhorabuena! Has reservado en {hotel.name} entre
         </Alert>
-      </Snackbar>
+      </Snackbar> */}
     </>
   );
+};
+
+HotelCard.propTypes = {
+  hotel: PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    name: PropTypes.string.isRequired,
+    photoUrl: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
+    pricePerNight: PropTypes.number.isRequired,
+  }).isRequired,
+  openModal: PropTypes.func.isRequired,
 };
