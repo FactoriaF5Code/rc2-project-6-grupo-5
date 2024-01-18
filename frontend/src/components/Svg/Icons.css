@@ -1,0 +1,24 @@
+@import '../../App.css';
+
+.heartIcon{
+    width: 50px;
+    fill: none;
+    stroke-width: 7px;
+    stroke: var(--color-main);
+}
+
+.heartIcon:hover{
+    fill:var(--color-main);
+}
+
+.iconBaggage{
+    width: 50px;
+    fill: white;
+    margin-top: 15px;
+}
+
+.iconOk{
+    width: 50px;
+    fill: green;
+    height: 50px;
+}
