@@ -1,66 +1,78 @@
-.hotelCard{
-    background-color: var(--color-gray);
-    display: flex;
-    justify-content: space-between;
-    padding: 15px;
-    margin-bottom: 20px;
+.hotelCard {
+  background-color: var(--color-gray);
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
+  margin-bottom: 20px;
 }
 
-.hotelImage{
-    width: 450px;
+.hotelImage {
+  width: 450px;
 }
 
-.hotelInfo{
-    margin-left: 40px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding: 16px 0 0 0;
-    width: 800px;
+.hotelInfo {
+  margin-left: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 16px 0 0 0;
+  width: 800px;
 }
 
-.hotelNamePrice{
-    font-size: 23px;
-    font-weight: 800;
-    color: var(--color-main);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
+.hotelNamePrice {
+  font-size: 23px;
+  font-weight: 800;
+  color: var(--color-main);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
 }
 
-.hotelPrice{
-    color:var(--color-green);
+.hotelPrice {
+  color: var(--color-green);
 }
 
-.hotelDescription{
-    width: 75%;
+.hotelDescription {
+  width: 75%;
 }
 
-.reservationInfo{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.reservationInfo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.icon{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .hotelReservationButton {
-    background-color: var(--color-dark-gray);
-    padding: 18px 24px;
-    font-size: 16px;
-    color:white;
-    font-weight: 600;
-    width: fit-content;
-    border-radius: 3px;
-    text-transform: uppercase;
-    letter-spacing: 0.1rem;
+  background-color: var(--color-dark-gray);
+  padding: 18px 24px;
+  font-size: 16px;
+  color: white;
+  font-weight: 600;
+  width: fit-content;
+  border-radius: 3px;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
 }
 
-.hotelReservationButton:hover{
-    background-color: var(--color-light-blue);
+.hotelReservationButton:hover {
+  background-color: var(--color-light-blue);
+}
+.MuiSnackbar-root {
+  width: 1200px;
+  height: 80px;
+}
+.MuiPaper-root {
+  width: 100%;
+}
+.MuiAlert-standardSuccess {
+  background-color: var(--color-message) !important;
+  color: white !important;
+  font-family: var(--main-font-family) !important;
 }
