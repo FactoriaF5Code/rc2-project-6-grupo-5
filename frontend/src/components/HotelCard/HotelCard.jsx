@@ -2,7 +2,7 @@ import "./HotelCard.css";
 import { useState } from "react";
 import { HeartIcon } from "../Svg/HeartIcon";
 import { ModalReservationDates } from "../Modal/ModalReservationDates";
-//import { Button, IconButton, Snackbar } from "@material-ui/core";
+import { Button, IconButton, Snackbar } from "@material-ui/core";
 import CloseIcon from "@material-ui/icons/Close";
 import Alert from "@material-ui/lab/Alert";
 import PropTypes from "prop-types";
