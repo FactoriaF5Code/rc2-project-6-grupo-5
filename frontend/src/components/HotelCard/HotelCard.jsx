@@ -1,3 +1,4 @@
+import React from "react";
 import "./HotelCard.css";
 import { useState } from "react";
 import { HeartIcon } from "../Svg/HeartIcon";
@@ -7,16 +8,15 @@ import CloseIcon from "@material-ui/icons/Close";
 import Alert from "@material-ui/lab/Alert";
 import PropTypes from "prop-types";
 
-
 export const HotelCard = ({ hotel, openModal }) => {
   const [modalIsOpen, setModalIsOpen] = useState(false);
 
   const [snackOpen, setSnackOpen] = useState(false);
 
   const handleReservationClick = () => {
-    openModal(hotel.id);
+    openModal(hotel.id, hotel.name, hotel.photoUrl);
   };
-  
+
   const handleClose = (event, reason) => {
     if (reason === "clickaway") {
       return;
@@ -40,36 +40,40 @@ export const HotelCard = ({ hotel, openModal }) => {
             <div className="icon">
               <HeartIcon />
             </div>
-            <button className="hotelReservationButton" onClick={handleReservationClick}>
+            <button
+              className="hotelReservationButton"
+              onClick={handleReservationClick}
+            >
               ¡Reserva Ahora!
             </button>
-            {modalIsOpen && <ModalReservationDates closeModal={() => setModalIsOpen(false)} hotelId={hotel.id} />}
-
-            {/* {modalIsOpen && (
+            {modalIsOpen && (
               <ModalReservationDates
                 closeModal={() => {
                   setSnackOpen(true);
                   setModalIsOpen(false);
                 }}
+                hotelId={hotel.id}
+                name={hotel.name}
+                photoUrl={hotel.photoUrl}
               />
-            )} */}
+            )}
           </div>
         </div>
       </li>
-      {/* <Snackbar
+      
+      <Snackbar
         anchorOrigin={{
           vertical: "bottom",
           horizontal: "left",
         }}
         open={snackOpen}
-        
         autoHideDuration={6000}
         onClose={handleClose}
         message="Note archived"
         action={
           <React.Fragment>
             <Button color="secondary" size="small" onClick={handleClose}>
-              UNDO
+              CERRAR
             </Button>
             <IconButton
               size="small"
@@ -85,7 +89,7 @@ export const HotelCard = ({ hotel, openModal }) => {
         <Alert onClose={handleClose} severity="success">
           Enhorabuena! Has reservado en {hotel.name} entre
         </Alert>
-      </Snackbar> */}
+      </Snackbar>
     </>
   );
 };

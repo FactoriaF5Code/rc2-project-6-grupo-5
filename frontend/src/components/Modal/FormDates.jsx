@@ -7,6 +7,8 @@ export const FormDates = ( props ) => {
   const [formData, setFormData] = useState({
     entryDay: "",
     exitDay: "",
+    name: props.name,
+    photoUrl: props.photoUrl,
   });
 
   
@@ -26,6 +28,8 @@ export const FormDates = ( props ) => {
     formDataObject.append("entryDay", formData.entryDay);
     formDataObject.append("exitDay", formData.exitDay);
     formDataObject.append("hotelId", props.hotelId);
+    formDataObject.append("name", formData.name);
+    formDataObject.append("photoUrl", formData.photoUrl);
 
     fetch(apiUrlBookings, {
       method: "POST",
@@ -33,6 +37,8 @@ export const FormDates = ( props ) => {
         entryDay: formData.entryDay,
         exitDay: formData.exitDay,
         hotelId: props.hotelId,
+        name: props.name,
+        photoUrl: props.photoUrl,
       }),
       headers: {
         "Content-Type": "application/json",
@@ -40,13 +46,8 @@ export const FormDates = ( props ) => {
     })
       .then((response) => response.json())
       .then((data) => {
-        // Hacer algo con la respuesta del servidor
         if (data.success){
-            //Cerrar ModalReservationDates y
-            //Mostrar el snackbar de reserva exitosa
-        } else{
-            //Mostrar un mensaje de error
-            //En ModalReservationDates
+          /*Cerrar modal*/
         }
       })
       .catch((error) => {
@@ -85,4 +86,6 @@ export const FormDates = ( props ) => {
 
 FormDates.propTypes = {
     hotelId: PropTypes.number.isRequired,
+    name: PropTypes.string.isRequired,
+    photoUrl: PropTypes.string.isRequired,
   };
