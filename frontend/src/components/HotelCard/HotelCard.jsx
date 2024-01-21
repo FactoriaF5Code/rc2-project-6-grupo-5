@@ -6,8 +6,7 @@ import { Button, IconButton, Snackbar } from "@material-ui/core";
 import CloseIcon from "@material-ui/icons/Close";
 import Alert from "@material-ui/lab/Alert";
 import PropTypes from "prop-types";
-
-
+import React from "react";
 export const HotelCard = ({ hotel, openModal }) => {
   const [modalIsOpen, setModalIsOpen] = useState(false);
 
@@ -16,7 +15,7 @@ export const HotelCard = ({ hotel, openModal }) => {
   const handleReservationClick = () => {
     openModal(hotel.id);
   };
-  
+
   const handleClose = (event, reason) => {
     if (reason === "clickaway") {
       return;
@@ -40,29 +39,36 @@ export const HotelCard = ({ hotel, openModal }) => {
             <div className="icon">
               <HeartIcon />
             </div>
-            <button className="hotelReservationButton" onClick={handleReservationClick}>
+            <button
+              className="hotelReservationButton"
+              onClick={handleReservationClick}
+            >
               ¡Reserva Ahora!
             </button>
-            {modalIsOpen && <ModalReservationDates closeModal={() => setModalIsOpen(false)} hotelId={hotel.id} />}
-
             {/* {modalIsOpen && (
+              <ModalReservationDates
+                closeModal={() => setModalIsOpen(false)}
+                hotelId={hotel.id}
+              />
+          )}*/}
+
+            {modalIsOpen && (
               <ModalReservationDates
                 closeModal={() => {
                   setSnackOpen(true);
                   setModalIsOpen(false);
                 }}
               />
-            )} */}
+            )}
           </div>
         </div>
       </li>
-      {/* <Snackbar
+      <Snackbar
         anchorOrigin={{
           vertical: "bottom",
           horizontal: "left",
         }}
         open={snackOpen}
-        
         autoHideDuration={6000}
         onClose={handleClose}
         message="Note archived"
@@ -83,9 +89,12 @@ export const HotelCard = ({ hotel, openModal }) => {
         }
       >
         <Alert onClose={handleClose} severity="success">
-          Enhorabuena! Has reservado en {hotel.name} entre
+          Enhorabuena! Has reservado en {hotel.name} entre {FormData.entryDay} y{" "}
+          {FormData.exitDay}
+          {FormData.exitDay}
+          {FormData.exitDay}
         </Alert>
-      </Snackbar> */}
+      </Snackbar>
     </>
   );
 };

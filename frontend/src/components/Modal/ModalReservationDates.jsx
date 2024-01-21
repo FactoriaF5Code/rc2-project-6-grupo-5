@@ -1,21 +1,32 @@
-import "./ModalReservationDates.css"
-import PropTypes from 'prop-types';
+import "./ModalReservationDates.css";
+import PropTypes from "prop-types";
 import { FormDates } from "./FormDates";
 
-export const ModalReservationDates = ( { closeModal, hotelId } ) => {
+export const ModalReservationDates = ({
+  closeModal,
+  hotelId,
+  setSnackbarOpen,
+}) => {
+  const handleModalClose = () => {
+    closeModal();
+    setSnackbarOpen(true);
+  };
+
   return (
     <>
-        <section className="modalContainer">
-            <button className="modalCloseButton" onClick={closeModal}>CERRAR X</button>
-            <h2 className="modalTitle">Completa tu reserva
-            </h2>
-            <FormDates hotelId={hotelId} />
-        </section>
+      <section className="modalContainer">
+        <button className="modalCloseButton" onClick={closeModal}>
+          CERRAR X
+        </button>
+        <h2 className="modalTitle">Completa tu reserva</h2>
+        <FormDates hotelId={hotelId} />
+      </section>
     </>
-  )
-}
+  );
+};
 
 ModalReservationDates.propTypes = {
   closeModal: PropTypes.func.isRequired,
   hotelId: PropTypes.number.isRequired,
+  setSnackbarOpen: PropTypes.func.isRequired,
 };
