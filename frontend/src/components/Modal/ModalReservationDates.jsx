@@ -24,7 +24,7 @@ export const ModalReservationDates = ({
 ModalReservationDates.propTypes = {
   closeModal: PropTypes.func.isRequired,
   hotelId: PropTypes.number.isRequired,
-  setSnackbarOpen: PropTypes.func.isRequired,
+
   name: PropTypes.string.isRequired,
   photoUrl: PropTypes.string.isRequired,
 };
