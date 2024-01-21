@@ -5,13 +5,9 @@ import { FormDates } from "./FormDates";
 export const ModalReservationDates = ({
   closeModal,
   hotelId,
-  setSnackbarOpen,
+  name,
+  photoUrl,
 }) => {
-  const handleModalClose = () => {
-    closeModal();
-    setSnackbarOpen(true);
-  };
-
   return (
     <>
       <section className="modalContainer">
@@ -19,7 +15,7 @@ export const ModalReservationDates = ({
           CERRAR X
         </button>
         <h2 className="modalTitle">Completa tu reserva</h2>
-        <FormDates hotelId={hotelId} />
+        <FormDates hotelId={hotelId} name={name} photoUrl={photoUrl} />
       </section>
     </>
   );
@@ -29,4 +25,6 @@ ModalReservationDates.propTypes = {
   closeModal: PropTypes.func.isRequired,
   hotelId: PropTypes.number.isRequired,
   setSnackbarOpen: PropTypes.func.isRequired,
+  name: PropTypes.string.isRequired,
+  photoUrl: PropTypes.string.isRequired,
 };

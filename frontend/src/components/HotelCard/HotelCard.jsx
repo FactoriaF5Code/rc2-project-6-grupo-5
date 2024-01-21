@@ -1,3 +1,4 @@
+import React from "react";
 import "./HotelCard.css";
 import { useState } from "react";
 import { HeartIcon } from "../Svg/HeartIcon";
@@ -6,14 +7,14 @@ import { Button, IconButton, Snackbar } from "@material-ui/core";
 import CloseIcon from "@material-ui/icons/Close";
 import Alert from "@material-ui/lab/Alert";
 import PropTypes from "prop-types";
-import React from "react";
+
 export const HotelCard = ({ hotel, openModal }) => {
   const [modalIsOpen, setModalIsOpen] = useState(false);
 
   const [snackOpen, setSnackOpen] = useState(false);
 
   const handleReservationClick = () => {
-    openModal(hotel.id);
+    openModal(hotel.id, hotel.name, hotel.photoUrl);
   };
 
   const handleClose = (event, reason) => {
@@ -45,12 +46,6 @@ export const HotelCard = ({ hotel, openModal }) => {
             >
               ¡Reserva Ahora!
             </button>
-            {/* {modalIsOpen && (
-              <ModalReservationDates
-                closeModal={() => setModalIsOpen(false)}
-                hotelId={hotel.id}
-              />
-          )}*/}
 
             {modalIsOpen && (
               <ModalReservationDates
@@ -58,11 +53,15 @@ export const HotelCard = ({ hotel, openModal }) => {
                   setSnackOpen(true);
                   setModalIsOpen(false);
                 }}
+                hotelId={hotel.id}
+                name={hotel.name}
+                photoUrl={hotel.photoUrl}
               />
             )}
           </div>
         </div>
       </li>
+
       <Snackbar
         anchorOrigin={{
           vertical: "bottom",
@@ -75,7 +74,7 @@ export const HotelCard = ({ hotel, openModal }) => {
         action={
           <React.Fragment>
             <Button color="secondary" size="small" onClick={handleClose}>
-              UNDO
+              CERRAR
             </Button>
             <IconButton
               size="small"
